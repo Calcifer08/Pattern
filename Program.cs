@@ -28,9 +28,9 @@
 
 public class Facade //паттерн фасад
 {
-  Design Design;
-  Construction Construction;
-  Finish Finishing;
+  private Design Design;
+  private Construction Construction;
+  private Finish Finishing;
 
   public Facade()
   {
