@@ -1,4 +1,4 @@
-﻿public sealed class Singleton_builder //паттерн одиночка
+public sealed class Singleton_builder //паттерн одиночка
 {
   public string name;
   private Singleton_builder() { name = "Строитель"; }
@@ -78,9 +78,15 @@ class Finish
   }
 }
 
-abstract class Worker //паттерн шаблонный метод
+
+interface IWorker
 {
-  public void Work()
+  void work();
+}
+
+abstract class Worker : IWorker //паттерн шаблонный метод
+{
+  public void work()
   {
     Begin();
     Works();
@@ -144,9 +150,9 @@ class House
 
     Console.WriteLine("\n\t\tПаттерн: Шаблонный метод");
     Painter painter = new Painter();
-    painter.Work();
+    painter.work();
     Installer installer = new Installer();
-    installer.Work();
+    installer.work();
   }
 }
 
